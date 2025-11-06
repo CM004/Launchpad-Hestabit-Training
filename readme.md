@@ -1,2 +1,1 @@
-# Readme FileThis line is added by repoAlpha
-This line is added by repoBeta
+this line is added by beta repo
