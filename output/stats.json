@@ -1,0 +1,48 @@
+{
+  "totalWords": 122485,
+  "uniqueWords": 38,
+  "longestWord": "reprehenderit",
+  "shortestWord": "ipsum",
+  "topWords": [
+    {
+      "word": "incididunt",
+      "count": 3342
+    },
+    {
+      "word": "culpa",
+      "count": 3313
+    },
+    {
+      "word": "nulla",
+      "count": 3301
+    },
+    {
+      "word": "laboris",
+      "count": 3288
+    },
+    {
+      "word": "aliqua",
+      "count": 3286
+    },
+    {
+      "word": "eiusmod",
+      "count": 3278
+    },
+    {
+      "word": "veniam",
+      "count": 3275
+    },
+    {
+      "word": "labore",
+      "count": 3263
+    },
+    {
+      "word": "commodo",
+      "count": 3259
+    },
+    {
+      "word": "ipsum",
+      "count": 3258
+    }
+  ]
+}

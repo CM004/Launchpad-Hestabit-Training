@@ -1,0 +1,17 @@
+[
+  {
+    "concurrency": 1,
+    "executionTime": 5,
+    "memoryUsage": 786432
+  },
+  {
+    "concurrency": 4,
+    "executionTime": 2,
+    "memoryUsage": 1572864
+  },
+  {
+    "concurrency": 8,
+    "executionTime": 2,
+    "memoryUsage": 1310720
+  }
+]
