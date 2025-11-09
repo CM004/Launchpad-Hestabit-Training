@@ -112,4 +112,4 @@ Generates nightly artifacts and logs for auditability.
 
 ---
 
-Would you like a shorter single-page summary suitable for a portfolio
+
