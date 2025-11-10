@@ -9,10 +9,10 @@ const results = {}; // Object to hold both benchmark results
 const createTestFile = () => {
   if (fs.existsSync(filePath)) {
     console.log('File already exists, skipping file creation.');
-    return; // Exit the function without overwriting the file
+    return; 
   }
 
-  // Use dd command to generate a random file of 51MB
+  // Use dd command 
   try {
     execSync(`dd if=/dev/urandom of=${filePath} bs=1M count=51`);
     console.log(`Test file created with random data: 51MB`);
@@ -96,7 +96,6 @@ createTestFile();
 warmCache(() => {
   benchmarkReadFile(() => {
     console.log('readFile benchmark complete');
-
     warmCache(() => {
       benchmarkStreamFile(() => {
         console.log('stream benchmark complete');
