@@ -94,7 +94,6 @@ async function benchmarkConcurrency(filePath, concurrency) {
       --- Now compute full stats exactly for the whole file (single read) ---
       Read the entire file, process words, and produce:
       totalWords, uniqueWords, longestWord, shortestWord, topWords
-      This logic is the same as in your original single-file implementation.
     */
     // Read the file asynchronously
     const text = await fsp.readFile(argv.file, 'utf8');
