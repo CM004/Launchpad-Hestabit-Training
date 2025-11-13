@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap');
+
+*{box-sizing:border-box}
+body{
+  margin:0; 
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Rubik';
+  background: #d9ebfe; padding:36px;
+}
+
+/* card */
+.accordion{
+  width:850px; 
+  border-radius:15px; overflow:hidden;
+  box-shadow:2px 10px 30px #888888
+}
+
+/* label */
+.accordion .label{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 28px; font-size:20px; font-weight:600;
+  color: white; background: #2c3d50 ; cursor:pointer;
+}
+
+/* chevron*/
+.accordion .label::after{
+  content:'>'; 
+  color: white;
+}
+
+/* separator */
+.accordion hr{margin:0;border:0;border-top:1px solid rgba(255,255,255,0.06)}
+
+/* panel (hidden) */
+.accordion .content{
+  background: white; color:#2f3940;
+  padding:0px 28px; max-height:0;overflow: hidden;
+  transition: all 0.3s ease;
+  font-size:16px; line-height:1.7;
+}
+
+/* show panel, change header bg, rotate chevron when .active */
+.accordion .container.active .label{ background: black }
+.accordion .container.active .label::after{ transform:rotate(90deg) }
+.accordion .container.active .content{ padding:22px 28px; max-height:600px }
