@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Utilities Simple Demo</title>
+</head>
+<body>
+
+<h2>Debounce Example</h2>
+<input id="debInput" placeholder="Type here..." />
+<p id="debOutput">Waiting...</p>
+
+<h2>Throttle Example</h2>
+<button id="thrBtn">Click many times</button>
+<p id="thrOutput">Throttle count: 0</p>
+
+<h2>GroupBy Example</h2>
+<button id="grpBtn">Group Example Data</button>
+<pre id="grpOutput"></pre>
+
+<script>
+// ----------- SIMPLE UTILITIES -----------
+
+function debounce(func, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), delay);
+  };
+}
+
+function throttle(func, delay) {
+  let last = 0;
+  return function(...args) {
+    const now = Date.now();
+    if (now - last > delay) {
+      last = now;
+      func(...args);
+    }
+  };
+}
+
+function groupBy(arr, key) {
+  const result = {};
+  arr.forEach(item => {
+    const group = item[key];
+    if (!result[group]) result[group] = [];
+    result[group].push(item);
+  });
+  return result;
+}
+
+// ----------- DEMOS -----------
+
+document.getElementById("debInput")
+  .addEventListener("input", debounce(() => {
+    document.getElementById("debOutput").innerText =
+      "Debounced Output: " + debInput.value;
+  }, 500));
+
+let thrCount = 0;
+document.getElementById("thrBtn")
+  .addEventListener("click", throttle(() => {
+    thrCount++;
+    document.getElementById("thrOutput").innerText =
+      "Throttle count: " + thrCount;
+  }, 1000));
+
+document.getElementById("grpBtn").addEventListener("click", () => {
+  const data = [
+    { name: "A", city: "Pune" },
+    { name: "B", city: "Pune" },
+    { name: "C", city: "Delhi" }
+  ];
+
+  const grouped = groupBy(data, "city");
+  document.getElementById("grpOutput").innerText =
+    JSON.stringify(grouped, null, 2);
+});
+</script>
+</body>
+</html>
