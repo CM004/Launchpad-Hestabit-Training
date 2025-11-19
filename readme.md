@@ -16,15 +16,9 @@ On Day 2, I worked with CSS selectors, the box model, spacing, units, and the im
 I learned both **Flexbox** (1D layout) and **CSS Grid** (2D layout) and used them to design responsive page sections.  
 I also practiced media queries for mobile-first design and added basic transitions to make UI interactions smoother.
 
-**Flexbox Layouts**  
-- Large  
-- Medium  
-- Small  
+**Flexbox Layout**   
  ![alt text](<screenshots/Pasted image (3).png>)
-**Grid Layouts**  
-- Large  
-- Medium  
-- Small  
+**Grid Layout**    
  ![alt text](<screenshots/Pasted image (4).png>)
 ---
 
@@ -50,7 +44,7 @@ It included all essential features: **Add**, **Edit**, **Delete**, and **Mark Co
 
 I also implemented simple error handling using a `logs/errors.md` file.
 
-**Todo App Screens**  
+**Todo App Screen**  
  ![ screenshots/todo.png](screenshots/todo.png)
 ---
 
