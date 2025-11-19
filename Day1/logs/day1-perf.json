@@ -1,0 +1,10 @@
+{
+  "readFile": {
+    "time": 66,
+    "memory": 53608448
+  },
+  "stream": {
+    "time": 53,
+    "memory": 147456
+  }
+}
