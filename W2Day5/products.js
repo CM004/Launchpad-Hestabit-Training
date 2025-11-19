@@ -1,66 +1,82 @@
-// minimal selectors
-const main = document.querySelector("main");
-const search = document.querySelector("#search");
-const sort = document.querySelector("#sort");
+// Minimal selectors
+const productsList = document.getElementById("products");
+const status = document.getElementById("status");
+const search = document.getElementById("search");
+const sort = document.getElementById("sort");
 
 let products = [];
 
-// simple helper
-const clear = () => main.innerHTML = "";
+// Clear list + status
+const clear = () => {
+  productsList.innerHTML = "";
+  status.textContent = "";
+};
 
-// show message
-const showMsg = (txt) => main.innerHTML = `<p>${txt}</p>`;
+// Show a message
+const showMsg = (txt) => {
+  clear();
+  status.textContent = txt;
+};
 
-// add a product card
+// Create a product card
 function addCard(p) {
-  main.innerHTML += `
+  const li = document.createElement("li");
+  li.className = "product-item";
+  li.innerHTML = `
     <div class="card">
-      <img src="${p.images[0]}" alt="">
-      <h3>${p.title}</h3>
-      <p class="price">$${p.price}</p>
-    </div>
-  `;
+      <img src="${p.images?.[0] || p.thumbnail || ''}" alt="">
+      <h3 class="product-title">${p.title}</h3>
+      <p class="product-price">$${p.price}</p>
+    </div>`;
+  productsList.appendChild(li);
 }
 
-// debounce
-function debounce(fn, delay = 300) {
+// Render many products
+function render(list) {
+  clear();
+  if (!list.length) return showMsg("No products found.");
+  list.forEach(addCard);
+}
+
+// Simple debounce
+function debounce(fn, time = 300) {
   let t;
   return (...args) => {
     clearTimeout(t);
-    t = setTimeout(() => fn(...args), delay);
+    t = setTimeout(() => fn(...args), time);
   };
 }
 
-// search
+// Search (debounced)
 const doSearch = debounce((text) => {
   const q = text.toLowerCase();
   const filtered = products.filter(p => p.title.toLowerCase().includes(q));
-  clear();
-  filtered.length ? filtered.forEach(addCard) : showMsg("No results.");
-});
+  render(filtered);
+}, 300);
 
-// sort high → low
+// Sort high → low
 function sortHigh() {
   const sorted = [...products].sort((a, b) => b.price - a.price);
-  clear();
-  sorted.forEach(addCard);
+  render(sorted);
 }
 
-// fetch data
+// Fetch products
 async function load() {
   try {
+    showMsg("Loading products…");
     const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
     products = data.products;
-    products.forEach(addCard);
+    render(products);
   } catch (err) {
     showMsg("Failed to load products.");
+    console.error(err);
   }
 }
 
-// listeners
+// Event listeners
 search.addEventListener("input", e => doSearch(e.target.value));
-sort.addEventListener("change", () => sortHigh());
+sort.addEventListener("change", sortHigh);
 
-// init
+// Start
 load();

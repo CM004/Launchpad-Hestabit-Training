@@ -8,29 +8,29 @@
 </head>
 <body class="body">
 
+  <!-- Header -->
   <header class="header">
     <h1 class="heading-products">Products</h1>
     <a class="link-home" href="index.html">Home</a>
   </header>
 
+  <!-- Search + Sort Controls -->
   <section class="controls">
     <input id="search" class="search-box" type="search" placeholder="Search products">
     <select id="sort" class="sort-box">
       <option value="default">Default</option>
       <option value="high">High → Low</option>
-      <option value="low">Low → High</option>
     </select>
   </section>
 
+  <!-- Main product grid -->
   <main>
-    <ul id="products" class="products-list">
-      <!-- JS will insert items -->
-    </ul>
-
+    <ul id="products" class="products-list"></ul>
     <p id="status" class="status-text">Loading...</p>
   </main>
 
-
+  <!-- Script -->
   <script src="products.js"></script>
+
 </body>
 </html>
