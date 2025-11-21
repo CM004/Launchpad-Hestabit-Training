@@ -1,4 +1,5 @@
-import { FaHome, FaProjectDiagram, FaCog, FaUser, FaMoneyBill } from "react-icons/fa";
+import Link from "next/link";
+import { FaTachometerAlt, FaProjectDiagram, FaCog, FaUser, FaMoneyBill } from "react-icons/fa";
 export default function Sidebar() {
   return (
     <aside id="sidebar" className="h-screen w-48 bg-gray-800 text-white p-4">
@@ -10,7 +11,8 @@ export default function Sidebar() {
 
      <ul className="space-y-4 text-sm">
         <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Core</p>
-        <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"> <FaHome/> Home</li>
+        <li>
+        <Link href="/Dashboard" className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"> <FaTachometerAlt/> Dashboard</Link></li>
         
         <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Core</p>
         <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaProjectDiagram/> Projects</li>
