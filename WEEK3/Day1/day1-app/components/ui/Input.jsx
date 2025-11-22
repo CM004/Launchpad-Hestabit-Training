@@ -4,7 +4,8 @@ export default function Input({ className = "", type = "text", placeholder = "",
     <input
       type={type}
       placeholder={placeholder}
-      className={`${base} ${className}`.trim()} 
+      className={`${base} ${className}`.trim()}
+      {...rest}           //like onChange, id, aria-*, etc. 
     />
   );
 }
