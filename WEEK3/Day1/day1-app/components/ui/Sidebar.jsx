@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaTachometerAlt, FaProjectDiagram, FaCog, FaUser, FaMoneyBill } from "react-icons/fa";
+import { FaTachometerAlt, FaProjectDiagram, FaCog, FaUser, FaMoneyBill,FaInfoCircle } from "react-icons/fa";
 export default function Sidebar() {
   return (
     <aside id="sidebar" className="h-screen w-48 bg-gray-800 text-white p-4">
@@ -14,15 +14,20 @@ export default function Sidebar() {
         <li>
         <Link href="/Dashboard" className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"> <FaTachometerAlt/> Dashboard</Link></li>
         
-        <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Core</p>
+        <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Interface</p>
         <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaProjectDiagram/> Projects</li>
         
-        <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Core</p>
+        <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Addons</p>
         <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaCog/> Settings</li>
         <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaMoneyBill/> Plans</li>
         
-        <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Core</p>
-        <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaUser/> Profile</li>
+        <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Personal</p>
+        <li>
+          <Link href = "/Dashboard/profile"className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaUser/> Profile</Link></li>
+         
+         <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">About</p>
+          <li>
+            <Link href="/about" className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaInfoCircle/>About Us</Link></li>
      </ul>
     </aside>
   );

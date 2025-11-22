@@ -15,7 +15,7 @@ import Sidebar from "@/components/ui/Sidebar";
 
 export const metadata = {
   title: "Week 3 Day1 App",
-  description: "This is my first app with Next.js app with tailwindcss",
+  description: "This is my first Next.js project with tailwindcss",
 };
 
 export default function RootLayout({ children }) {

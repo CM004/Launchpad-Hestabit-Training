@@ -4,7 +4,7 @@ export default function Navbar(){
         <nav className="flex items-center justify-between p-4 bg-gray-700">
   <button id="menu-btn"
    className="text-2xl  text-white hover:text-gray-500 cursor-pointer">☰</button>
-  <h1 className="fixed left-150 text-4xl text-white font-extrabold">My App</h1>
+  <h1 className="fixed left-150 text-4xl text-white font-extrabold">Gr8 Solutions.</h1>
   {/* <div>
       <Button size="sm" type="primary">Sign in</Button>
     </div> */}
