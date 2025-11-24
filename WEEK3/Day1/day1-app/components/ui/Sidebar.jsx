@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaTachometerAlt, FaProjectDiagram, FaCog, FaUser, FaMoneyBill,FaInfoCircle } from "react-icons/fa";
+import { FaTachometerAlt, FaProjectDiagram, FaCog, FaUser, FaUsers,FaInfoCircle } from "react-icons/fa";
 export default function Sidebar() {
   return (
     <aside id="sidebar" className="h-screen w-48 bg-gray-800 text-white p-4">
@@ -19,7 +19,8 @@ export default function Sidebar() {
         
         <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Addons</p>
         <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaCog/> Settings</li>
-        <li className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaMoneyBill/> Plans</li>
+        <li> 
+          <Link href ="/Dashboard/users"className="flex items-center gap-2 hover:text-gray-300 cursor-pointer text-2xl mb-6 font-semibold"><FaUsers/> Users</Link></li>
         
         <p className="text-sm text-gray-500 uppercase mb-6 tracking-wide">Personal</p>
         <li>
