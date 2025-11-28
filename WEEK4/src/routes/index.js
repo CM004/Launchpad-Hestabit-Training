@@ -1,25 +1,14 @@
 const express = require('express');
 const router = express.Router();
-
-// Example routes
+const productRoutes = require("./product.routes")
+const userRoutes = require("./user.routes")
 
 router.get('/', (req, res) => {
-  res.send("hi")
-});
-router.get('/users', (req, res) => {
-  res.json({ message: 'Get all users' });
+  res.json({message : "hi"});
 });
 
-router.post('/users', (req, res) => {
-  res.json({ message: 'Create user' });
-});
+router.use('/users', userRoutes);
 
-router.get('/products', (req, res) => {
-  res.json({ message: 'Get all products' });
-});
-
-router.get('/products', (req, res) => {
-  res.json({ message: `Create product ` });
-});
+router.use('/products', productRoutes);
 
 module.exports = router;

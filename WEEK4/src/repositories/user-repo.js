@@ -39,19 +39,3 @@ class UserRepository {
 }
 
 module.exports = UserRepository;
-
-// // In  user.controller.js (used by Express route)
-// const UserRepository = require('../repositories/user.repository');
-// const UserModel = require('../models/user.model'); // Your Mongoose model
-
-// const userRepository = new UserRepository(UserModel);
-
-// exports.getUsers = async (req, res) => {
-//   const users = await userRepository.findAllUsers();
-//   res.json(users);
-// };
-
-// exports.getUserById = async (req, res) => {
-//   const user = await userRepository.findUserById(req.params.id);
-//   res.json(user);
-// };

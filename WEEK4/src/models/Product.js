@@ -26,7 +26,19 @@ const productSchema = new mongoose.Schema({
         type: String,
         enum: ['available', 'unavailable'],
         default: 'available'
-    }
+    },
+    //soft delete fields
+    isDeleted: {
+        type: Boolean,
+        default: false
+    },
+    deletedAt: {
+        type: Date,
+        default: null
+    },
+    tags:[{
+        type: String
+    }]
 });
 
 productSchema.index({status: 1, createdAt: -1});
