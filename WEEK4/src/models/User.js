@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
     trim: true,
-    match: [/^.+@.+\\..+$/, 'Please fill a valid email address']
+    //match: [/^.+@.+\\..+$/, 'Please fill a valid email address']
   },
   createdAt: {
     type: Date,
@@ -34,13 +34,13 @@ userSchema.pre('save', async function (next) {
 
     this.password = await require('bcryptjs').hash(this.password, 10);
 
-    next();
+    // next();
 });
 
 userSchema.index({status: 1, createdAt: -1});
 
 userSchema.set('toJSON', {
-  transform: (ret) => {   // Field transformation ( ret is the returned object)
+  transform: (doc,ret) => {   // Field transformation ( ret is the returned object)
     delete ret.password; // Remove the password field from the response
     ret.userId = ret._id; // Rename _id to userId for API consistency
     delete ret._id;

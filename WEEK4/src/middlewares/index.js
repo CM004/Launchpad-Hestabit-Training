@@ -1,14 +1,10 @@
-// Import middleware packages
-const cors = require('cors');
-const helmet = require('helmet');
-const express = require('express');
+const {setupSecurity} = require("./security");
+const validate = require("./validate");
 
 // Function to setup all middlewares
 function setupMiddlewares(app) {
-  app.use(helmet());           // Security headers
-  app.use(cors());             // Allow browser requests
-  app.use(express.json());     // Parse JSON data
+  setupSecurity(app)
 }
 
-// Export the function
-module.exports = setupMiddlewares;
+// Export
+module.exports = {setupMiddlewares, validate}

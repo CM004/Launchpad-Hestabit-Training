@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
 const productController = require("../controllers/product.controller");
+const {apiLimiter} = require("../middlewares/security");
+const {validate} = require("../middlewares/index");
+
+router.use(apiLimiter);
 
 // Search with filters (must be before /:id)
-router.get('/search', productController.searchProducts);
+router.get('/search', validate('search','product'), productController.searchProducts);
 
 // Paginated products
 router.get('/paginated', productController.getPaginatedProducts);
@@ -16,10 +20,10 @@ router.get('/', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
 
 // Create product
-router.post('/', productController.createProduct);
+router.post('/', validate('create','product'), productController.createProduct);
 
 // Update product
-router.put('/:id', productController.updateProduct);
+router.put('/:id', validate('update','product'), productController.updateProduct);
 
 // Soft delete (for users)
 router.delete('/:id', productController.deleteProduct);

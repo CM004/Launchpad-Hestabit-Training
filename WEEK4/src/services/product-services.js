@@ -1,4 +1,3 @@
-// services/productService.js
 const Product = require('../models/Product');
 const ProductRepository = require('../repositories/product-repo');
 const { NotFoundError, ValidationError } = require('../utils/errors');

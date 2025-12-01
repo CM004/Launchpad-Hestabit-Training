@@ -1,7 +1,6 @@
 const productService = require('../services/product-services');
 
 async function searchProducts(req, res, next) {
-  console.log('REQ.QUERY ->', req.query);
   try {
     const searchProductResult = await productService.searchProducts(req.query);
     res.json({

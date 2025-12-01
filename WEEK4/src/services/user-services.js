@@ -1,10 +1,11 @@
 const User = require('../models/User');
 const UserRepository = require('../repositories/user-repo');
-
+const { NotFoundError, ValidationError } = require('../utils/errors');
 const userRepository = new UserRepository(User);
 
 async function createUser(userData) {
-  return await userRepository.createUser(userData);
+  const result = await userRepository.createUser(userData);
+  return result; 
 }
 
 async function getAllUsers() {
@@ -12,19 +13,34 @@ async function getAllUsers() {
 }
 
 async function getUserById(id) {
-  return await userRepository.findUserById(id);
+    const user = await userRepository.findUserById(id);
+    if (!user){
+        throw new NotFoundError("User not found");
+    }
+    return user 
 }
 
-async function getPaginatedUsers(page, limit) {
-  return await userRepository.findPaginatedUsers(page, limit);
+async function getPaginatedUsers(page = 1, limit = 10) {
+     return await userRepository.findPaginatedUsers(
+      parseInt(page),
+      parseInt(limit)
+    );
 }
 
 async function updateUser(id, updateData) {
-  return await userRepository.updateUser(id, updateData);
+    const user = await userRepository.updateUser(id, updateData);
+    if(!user){
+        throw new NotFoundError("User not found")
+    }
+  return user;
 }
 
 async function deleteUser(id) {
-  return await userRepository.deleteUser(id);
+    const user = await userRepository.deleteUser(id);
+    if(!user){
+        throw new NotFoundError("User Not found")
+    }
+  return user
 }
 
 module.exports = {
