@@ -126,3 +126,5 @@ A users management component that displays a searchable table with user data inc
 7. App router uses two directives "use client" and "use server"
 
 ## 8. writing learning about autoprefixes,potcss, use client,use directives.....
+Here are my complete notes for week 3 and my learnings
+https://docs.google.com/document/d/1-QKpGscj9OHWXALqX6QIB2EkvSLEuNziMG8C7_eGmiY/edit?usp=sharing
