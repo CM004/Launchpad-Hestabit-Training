@@ -8,3 +8,7 @@ logs/
 package-lock.json
 
 .env.*
+
+WEEK4/.env.dev
+WEEK4/.env.local
+WEEK4/.env.prod
