@@ -11,10 +11,17 @@ services:
   server:
     build:
       context: .
+    container_name: week5-server
+    restart: unless-stopped
     environment:
       NODE_ENV: production
+      MONGO_URI: mongodb://week5db:27017/week5-db
     ports:
       - 9000:9000
+    depends_on:
+      - week5db
+    networks:
+      - app-network
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
@@ -49,3 +56,32 @@ services:
 #   db-password:
 #     file: db/password.txt
 
+  week5db:
+    image: mongo:latest
+    container_name: week5-db
+    ports: 
+      - "27017:27017"
+    restart: unless-stopped
+    volumes:
+      - db-data:/data/db
+    networks:
+      - app-network
+
+  client:
+    build:
+      context : ./client
+    container_name: week5-client
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    networks:
+      - app-network
+    
+volumes:
+  db-data:
+    driver: local
+networks:
+  app-network:
+    driver: bridge
