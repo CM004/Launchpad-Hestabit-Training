@@ -1,0 +1,31 @@
+services:
+  backend-alpha:
+    build: ./backend
+    container_name: backend-alpha
+    networks:
+      - app-network
+
+
+  backend-beta:
+    build: ./backend
+    container_name: backend-beta
+    networks:
+      - app-network
+
+
+  nginx:
+    build: ./nginx
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - backend-alpha
+      - backend-beta
+    networks:
+      - app-network
+
+
+networks:
+  app-network:
+
+ 
