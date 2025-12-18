@@ -2,10 +2,10 @@ const express = require('express');
 const os = require('os');
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.json({ 
     message: 'Secure API Response', 
-    protocol: req.protocol,
+    protocol: req.headers['x-forwarded-proto'] || req.protocol,
     container: os.hostname()
   });
 });
