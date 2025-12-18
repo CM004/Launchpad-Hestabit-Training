@@ -27,4 +27,4 @@ app.get('/api', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Backend running on ${PORT}`));
+app.listen(PORT, () => console.log(`Backend running on ${PORT}`));
