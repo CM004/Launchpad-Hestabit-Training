@@ -7,8 +7,8 @@ next-tailwind-frontend/
 ├── app/
 │ ├── about/ # About page route
 │ ├── Dashboard/ # Dashboard page route
-| | ├── Profile # Profile page route
-│ | ├── users # Users Table page route
+│ │ ├── Profile/ # Profile page route
+│ │ └── users/ # Users Table page route
 │ ├── login/ # Login page route
 │ ├── clientlayout.jsx # Client-side layout wrapper with sidebar/navbar state
 │ ├── favicon.ico # Website favicon
