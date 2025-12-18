@@ -13,11 +13,11 @@ export default function Home() {
             Deployment Benchmarks
           </h2>
           <ul className="text-left text-gray-700 space-y-2">
-            <li>1. HTTPS with SSL certificates</li>
-            <li>2. NGINX reverse proxy</li>
-            <li>3. MongoDB database</li>
-            <li>4. Production ready backend</li>
-            <li>5. Next.js frontend</li>
+            <li>1. <a href="https://localhost" className="text-blue-600 hover:underline">HTTPS with SSL certificates</a></li>
+            <li>2. <a href="/api" className="text-blue-600 hover:underline">NGINX reverse proxy</a></li>
+            <li>3. <a href="/api" className="text-blue-600 hover:underline">MongoDB database</a></li>
+            <li>4. <a href="/health" className="text-blue-600 hover:underline">Production ready backend</a></li>
+            <li>5. Next.js frontend ✅</li>
           </ul>
         </div>
       </div>
