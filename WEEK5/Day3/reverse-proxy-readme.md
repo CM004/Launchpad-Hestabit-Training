@@ -9,7 +9,7 @@ Configure NGINX to distribute traffic using round-robin load balancing
 Route all /api requests through NGINX reverse proxy
 
 2. Folder Structure
-text
+
 Day3/
 ├── backend/
 │   ├── server.js
