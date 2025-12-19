@@ -7,24 +7,30 @@ Full-stack application with Next.js frontend, Node.js backend, MongoDB Atlas, NG
 
 ## Architecture
 
-┌─────────────────────────────────────┐
-│         Docker Network              │
-│                                     │
-│  ┌──────────────┐  ┌─────────────┐  │
-│  │  Frontend    │  │  Backend    │  │
-│  │  Port: 3000  │  │  Port: 3000 │  │
-│  └──────────────┘  └─────────────┘  │
-│         ↑                  ↑        │
-└─────────┼──────────────────┼────────┘
-          │                  │
-          └──────────────────┘
-                   │
-            ┌──────┴──────┐
-            │    NGINX    │
-            │Port: 80/443 │
-            └─────────────┘
-                   │
-              Internet
+
+                    ┌─────────────────────────────────────┐
+                    │         Internet (HTTPS/HTTP)       │
+                    └──────────────┬──────────────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────────────┐
+                    │   NGINX (Port: 80/443)               │
+                    │   - Reverse Proxy                    │
+                    │   - SSL Termination                  │
+                    └──────────┬───────────────────┬───────┘
+                               │                   │
+                ┌──────────────▼─────┐    ┌───────▼──────────────┐
+                │  Frontend          │    │  Backend             │
+                │  Next.js:3000      │    │  Node.js:3000        │
+                └────────────────────┘    └──────────┬───────────┘
+                                                     │
+                                          ┌──────────▼───────────┐
+                                          │  MongoDB Atlas       │
+                                          │  (Cloud Database)    │
+                                          └──────────────────────┘
+                    
+                    Docker Network: app-network
+
 
 ---
 
@@ -32,24 +38,23 @@ Full-stack application with Next.js frontend, Node.js backend, MongoDB Atlas, NG
 
 Day5/
 ├── backend/
-│ ├── Dockerfile
-│ ├── index.js
-│ └── package.json
+│   ├── Dockerfile
+│   ├── index.js
+│   └── package.json
 ├── frontend/
-│ ├── Dockerfile
-│ ├── next.config.js
-│ └── package.json
+│   ├── Dockerfile
+│   ├── next.config.js
+│   └── package.json
 ├── certs/
-│ ├── localhost.crt
-│ └── localhost.key
+│   ├── localhost.crt
+│   └── localhost.key
 ├── docker-compose.prod.yml
 ├── nginx.conf
-├── .env
-├── .env.example
+├── .env                     
+├── .env.example              
 ├── .gitignore
 ├── deploy.sh
 └── production-guide.md
-
 
 ---
 
@@ -73,13 +78,13 @@ NODE_ENV=production
 
 ### 2. Generate SSL Certificates
 
-# Create certs folder
+Create certs folder
 mkdir certs
 
-# Now generate certificates
+Now generate certificates
 mkcert -cert-file certs/localhost.crt -key-file certs/localhost.key localhost 127.0.0.1 ::1
 
-# Verify
+Verify
 ls -la certs/
 
 ### 3. Deploy
