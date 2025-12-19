@@ -41,3 +41,11 @@ Performed in `src/notebooks/EDA.ipynb` on `final.csv`:
 - Cleaned dataset has no missing values.
 - Duplicates and outliers have been removed.
 - Basic relationships between features are visualized
+
+---
+
+## Architecture
+
+![alt text](<screenshots/Screenshot from 2025-12-19 15-50-24.png>)
+
+---
