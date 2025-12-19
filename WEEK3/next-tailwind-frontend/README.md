@@ -4,42 +4,42 @@ This project features a complete SaaS landing page with reusable UI components a
 ##  Project Structure
 
 next-tailwind-frontend/
-├── app/
-│ ├── about/ # About page route
-│ ├── Dashboard/ # Dashboard page route
-│ │ ├── Profile/ # Profile page route
-│ │ └── users/ # Users Table page route
-│ ├── login/ # Login page route
-│ ├── clientlayout.jsx # Client-side layout wrapper with sidebar/navbar state
-│ ├── favicon.ico # Website favicon
-│ ├── globals.css # Global styles and Tailwind imports
-│ ├── layout.jsx # Root layout component (server component)
-│ └── page.jsx # Homepage with landing sections
-│
-├── components/
-│ ├── charts/ # Chart components folder
-│ │ ├── AreaChart.jsx # Area chart visualization component
-│ │ └── BarChart.jsx # Bar chart visualization component
-│ │
-│ ├── landing/ # Landing page sections
-│ │ ├── Features.jsx # Features grid section with service highlights
-│ │ ├── Footer.jsx # Footer with links and social media
-│ │ ├── Hero.jsx # Hero section with animated gradient background
-│ │ └── Testimonials.jsx # Customer testimonials cards section
-│ │
-│ └── ui/ # Reusable UI components
-│ ├── Badge.jsx # Badge component for labels and tags
-│ ├── Button.jsx # Customizable button component with variants
-│ ├── Card.jsx # Card wrapper component for content blocks
-│ ├── DataTable.jsx # Data table control component with search
-│ ├── Input.jsx # Input field component with ready to use styling
-│ ├── Login.jsx # Login modal/form component
-│ ├── Modal.jsx # Modal dialog component for popups
-│ ├── Navbar.jsx # Top navigation bar with menu toggle
-│ ├── Sidebar.jsx # Collapsible sidebar navigation menu
-│ ├── UI-COMPONENT-DOCS.md # Documentation for UI components
-│ ├── UserProfile.jsx # User profile display component
-│ └── UsersList.jsx # Users management table with search
+- app/
+  - about/                    # About page route
+  - Dashboard/                # Dashboard page route
+    - Profile/                # Profile page route
+    - users/                  # Users Table page route
+  - login/                    # Login page route
+  - clientlayout.jsx          # Client-side layout wrapper with sidebar/navbar state
+  - favicon.ico               # Website favicon
+  - globals.css               # Global styles and Tailwind imports
+  - layout.jsx                # Root layout component (server component)
+  - page.jsx                  # Homepage with landing sections
+
+- components/
+  - charts/                   # Chart components folder
+    - AreaChart.jsx           # Area chart visualization component
+    - BarChart.jsx            # Bar chart visualization component
+  
+  - landing/                  # Landing page sections
+    - Features.jsx            # Features grid section with service highlights
+    - Footer.jsx              # Footer with links and social media
+    - Hero.jsx                # Hero section with animated gradient background
+    - Testimonials.jsx        # Customer testimonials cards section
+  
+  - ui/                       # Reusable UI components
+    - Badge.jsx               # Badge component for labels and tags
+    - Button.jsx              # Customizable button component with variants
+    - Card.jsx                # Card wrapper component for content blocks
+    - DataTable.jsx           # Data table control component with search
+    - Input.jsx               # Input field component with ready to use styling
+    - Login.jsx               # Login modal/form component
+    - Modal.jsx               # Modal dialog component for popups
+    - Navbar.jsx              # Top navigation bar with menu toggle
+    - Sidebar.jsx             # Collapsible sidebar navigation menu
+    - UI-COMPONENT-DOCS.md    # Documentation for UI components
+    - UserProfile.jsx         # User profile display component
+    - UsersList.jsx           # Users management table with search
 
 ##  Component Details
 

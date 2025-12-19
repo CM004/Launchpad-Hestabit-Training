@@ -63,3 +63,32 @@ docker compose down
 
 # Remove volumes
 docker compose down -v
+
+---
+
+                          Internet (HTTP)
+                                 │
+                                 ▼
+                   ┌─────────────────────────┐
+                   │   Frontend Container    │
+                   │   React/HTML @3000      │
+                   │   (Port: 3000:3000)     │
+                   └──────────┬──────────────┘
+                              │
+                              │
+                   Docker Network: app-network
+                              │
+                              ▼
+                   ┌─────────────────────────┐
+                   │   Backend Container     │
+                   │   Node.js API @5000     │
+                   │   (Port: 5000:5000)     │
+                   └──────────┬──────────────┘
+                              │
+                              ▼
+                   ┌─────────────────────────┐
+                   │   Docker Volume         │
+                   │   (Data Persistence)    │
+                   └─────────────────────────┘
+
+              Managed by: docker-compose.yml
