@@ -37,24 +37,24 @@ Full-stack application with Next.js frontend, Node.js backend, MongoDB Atlas, NG
 ## Project Structure
 
 Day5/
-├── backend/
-│   ├── Dockerfile
-│   ├── index.js
-│   └── package.json
-├── frontend/
-│   ├── Dockerfile
-│   ├── next.config.js
-│   └── package.json
-├── certs/
-│   ├── localhost.crt
-│   └── localhost.key
-├── docker-compose.prod.yml
-├── nginx.conf
-├── .env                     
-├── .env.example              
-├── .gitignore
-├── deploy.sh
-└── production-guide.md
+  - backend/
+    - Dockerfile
+    - index.js
+    - package.json
+  - frontend/
+    - Dockerfile
+    - next.config.js
+    - package.json
+  - certs/
+    - localhost.crt
+    - localhost.key
+  - docker-compose.prod.yml
+  - nginx.conf
+  - .env
+  - .env.example
+  - .gitignore
+  - deploy.sh
+  - production-guide.md
 
 ---
 
