@@ -1,5 +1,16 @@
 # Linux in a Docker Container — Day 1
 
+                          Internet (HTTP)
+                                 │
+                                 ▼
+                   ┌─────────────────────────┐
+                   │   Docker Container      │
+                   │   Node.js App @3000     │
+                   │   (Port Mapping: 3000)  │
+                   └─────────────────────────┘
+
+                         Host Machine
+
 ## Setup
 ```
 docker init

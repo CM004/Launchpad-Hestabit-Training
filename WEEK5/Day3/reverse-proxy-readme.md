@@ -15,14 +15,15 @@ A practical guide demonstrating load balancing between two Node.js backend insta
 ## 2. Folder Structure
 
 Day3/
-├── backend/
-│ ├── server.js
-│ ├── package.json
-│ └── Dockerfile
-├── nginx.conf
-├── docker-compose.yml
-├── reverse-proxy-readme.md
-└── screenshots-day3/
+- backend/
+  - server.js
+  - package.json
+  - Dockerfile
+- nginx.conf
+- docker-compose.yml
+- reverse-proxy-readme.md
+- screenshots-day3/
+
 
 ---
 
@@ -70,3 +71,23 @@ Day3/
 - **Reverse Proxy:** Single entry point (NGINX) routes to multiple backends
 - **Container Networking:** Backends communicate using container names as hostnames
 - **No Port Exposure:** Backend ports only accessible internally, not from host
+
+---
+
+                    ┌─────────────────────────────────────┐
+                    │         Internet (HTTP)             │
+                    └──────────────┬──────────────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────────────┐
+                    │   NGINX (Port: 8080)                 │
+                    │   - Load Balancer                    │
+                    │   - Round Robin                      │
+                    └──────────┬───────────────────┬───────┘
+                               │                   │
+                ┌──────────────▼─────┐    ┌───────▼──────────────┐
+                │  Backend Alpha     │    │  Backend Beta        │
+                │  Node.js:3000      │    │  Node.js:3000        │
+                └────────────────────┘    └──────────────────────┘
+                    
+                    Docker Network: app-network

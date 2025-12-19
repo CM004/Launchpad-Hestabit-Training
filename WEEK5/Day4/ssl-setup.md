@@ -63,3 +63,24 @@ curl -k https://localhost/api
 
 Logs
 docker compose logs
+
+---
+
+                    ┌─────────────────────────────────────┐
+                    │         Internet (HTTPS/HTTP)       │
+                    └──────────────┬──────────────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────────────┐
+                    │   NGINX (Port: 8080/8443)            │
+                    │   - Reverse Proxy                    │
+                    │   - SSL Termination                  │
+                    │   - HTTP → HTTPS Redirect            │
+                    └──────────────┬───────────────────────┘
+                                   │
+                    ┌──────────────▼─────┐
+                    │  Backend           │
+                    │  Node.js:3000      │
+                    └────────────────────┘
+                    
+                    Docker Network: app-network
