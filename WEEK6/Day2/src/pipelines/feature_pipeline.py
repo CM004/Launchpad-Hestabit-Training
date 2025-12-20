@@ -1,5 +1,5 @@
 from ..utils import logger as log_module
-from ..features.build_features import generate_features
+from ..features.build_feature import generate_features
 import pandas as pd
 import numpy as np
 import json
@@ -12,7 +12,7 @@ logger = log_module.setup_logger()
 BASE = Path(__file__).resolve().parent.parent
 INPUT = BASE / "data/processed/final.csv"
 OUTPUT_DIR = BASE / "data/processed"
-FEAT_DIR = BASE.parent / "features"
+FEAT_DIR = BASE / "features"
 FEAT_DIR.mkdir(exist_ok=True)
 
 def build_pipeline(data_path):
