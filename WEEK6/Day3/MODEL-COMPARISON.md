@@ -1,52 +1,53 @@
 # Model Comparison & Selection
 
 ## Project: California Housing Dataset
-**Day 3 — Model Training Pipeline**
+**Day 3 — Classification Pipeline (Affordable/Expensive)**
 
 ---
 
 ## Model Evaluation Summary
 
-| Model            | CV R² Score | Test R² Score |
-|------------------|-------------|---------------|
-| LinearRegression | 0.612       | 0.598         |
-| Ridge            | 0.611       | 0.597         |
-| RandomForest     | 0.823       | 0.815         |
-| **XGBoost**      | **0.845**   | **0.852**     |
+| Model            | CV ROC-AUC | Test ROC-AUC |
+|------------------|------------|--------------|
+| LogisticRegression | 0.921    | 0.964      |
+| RandomForest     | 0.952     | 0.964      |
+| **XGBoost**      | **0.964** | **0.964**  |
+| NeuralNetwork    | 0.945     | 0.964      |
 
 ---
 
-## Predictions Plot
-![Predictions vs Actual](src/evaluation/predictions.png)
+## Confusion Matrix
+![Confusion Matrix](src/evaluation/confusion_matrix.png)
 
 ---
 
 ## Model Configurations
 
-- **LinearRegression**: Default settings
-- **Ridge**: `alpha=1.0` (L2 regularization)
-- **RandomForest**: `n_estimators=200, random_state=2025, max_depth=6`
-- **XGBoost**: `n_estimators=200, random_state=2025, learning_rate=0.05`
+- **LogisticRegression**: `max_iter=200, random_state=2025`
+- **RandomForest**: `n_estimators=100, random_state=2025`
+- **XGBoost**: `n_estimators=100, random_state=2025`
+- **NeuralNetwork**: `hidden_layer_sizes=(32,), max_iter=200, random_state=2025`
 
 ---
 
 ## Evaluation Method
-- **5-fold cross-validation** (StratifiedKFold, `random_state=2025`)
-- **Test set evaluation** on 20% holdout data
-- **Primary metric**: R² (coefficient of determination)
+- **5-fold StratifiedKFold** (`random_state=2025`)
+- **Test set evaluation** on 20% holdout
+- **Primary metric**: ROC-AUC (model selection + reporting)
+- **Other metrics**: Accuracy, Precision, Recall, F1
+
+**Target conversion**: Price > median($169,200) = 1(Expensive), else 0(Affordable)
+**Class balance**: 6764 Affordable, 6752 Expensive
 
 ---
 
 ## Conclusion
 
 **Best Model: XGBoost**
-- **CV R²**: 0.845 (highest)
-- **Test R²**: 0.852 (highest)
+- **CV ROC-AUC**: 0.964 (highest)
+- **Test ROC-AUC**: 0.964 (tied highest)
 - **Saved as**: `src/models/best_model.pkl`
 
-**Reason**: XGBoost shows superior generalization across CV folds **and** test set performance. Random Forest is close second, but XGBoost wins both metrics.
+**Reason**: XGBoost leads CV ROC-AUC and matches best test performance. Excellent price classification.
 
 **Metrics saved**: `src/evaluation/metrics.json`
-
----
-
