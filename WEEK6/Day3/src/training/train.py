@@ -15,6 +15,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 from xgboost import XGBClassifier
+import seaborn as sns
 
 logger = setup_logger()
 
@@ -100,13 +101,13 @@ test_metrics = {
 
 # Confusion matrix plot
 cm = confusion_matrix(y_test_class, y_pred)
-plt.imshow(cm, cmap="viridis")
+plt.figure(figsize=(6, 6))
+sns.heatmap(cm, annot=True, fmt="d", cmap="viridis", 
+            xticklabels=["Affordable", "Expensive"], 
+            yticklabels=["Affordable", "Expensive"])
 plt.title("Confusion Matrix\n(0=Affordable, 1=Expensive)")
-plt.colorbar()
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
-plt.xticks([0, 1], ["Affordable", "Expensive"])
-plt.yticks([0, 1], ["Affordable", "Expensive"])
 plt.tight_layout()
 plt.savefig(EVAL_DIR / "confusion_matrix.png")
 plt.close()
