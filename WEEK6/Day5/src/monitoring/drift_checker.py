@@ -1,7 +1,7 @@
 import pandas as pd
 from scipy.stats import ks_2samp
 
-REFERENCE = "data/processed/X_train.csv"
+REFERENCE = "/home/chandramohan/Desktop/Week1/WEEK6/Day5/src/data/processed/X_train.csv"
 LIVE = "prediction_logs.csv"
 
 def check_drift():
