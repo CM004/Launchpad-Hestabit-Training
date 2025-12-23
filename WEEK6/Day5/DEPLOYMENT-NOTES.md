@@ -1,13 +1,14 @@
-
+=========================================
 DAY 5 - HOUSE PRICE CLASSIFIER DEPLOYMENT 
 =========================================
 
 Day5
-├── API: Running & Predicting
-├── Logs: prediction_logs.csv (created)
-├── Drift: Monitoring working (DRIFT detected)
-├── Docker: Built & Ready
-└── Model: Loaded successfully
+====
+- API: Running & Predicting
+- Logs: prediction_logs.csv (created)
+- Drift: Monitoring working (DRIFT detected)
+- Docker: Built & Ready
+- Model: Loaded successfully
 
 CURRENT STRUCTURE (Day5/)
 ========================
@@ -31,13 +32,7 @@ curl -X POST http://localhost:8000/predict \
 # 3. CHECK LOGS
 tail prediction_logs.csv
 
-timestamp,request_id,prediction,probability,longitude,latitude,housing_median_age,total_rooms,total_bedrooms,population,households,median_income
-2025-12-23T11:20:27.424560,eb26f24c-9010-49da-8dbb-bc2406002502,1,0.7088514566421509,-122.23,37.88,41.0,880.0,129.0,322.0,126.0,1.23
-2025-12-23T11:21:10.172178,de78d975-9a7a-40a4-85f1-7b5358efed37,1,0.7088514566421509,-122.23,37.88,41.0,880.0,129.0,322.0,126.0,1.23
-2025-12-23T11:21:26.335416,cc4c41ab-35be-401a-a59c-617b755e7f59,1,0.7088514566421509,-122.23,37.88,41.0,880.0,129.0,322.0,126.0,1.23
-2025-12-23T11:21:35.551442,7498308f-56e8-4d2e-96f9-a3256862d8a5,1,0.9322736859321594,-122.23,37.88,20.0,2000.0,400.0,800.0,300.0,5.0
-2025-12-23T11:24:22.697931,c73af298-3655-4a00-a48f-c17df39dad06,1,0.7088514566421509,-122.23,37.88,41.0,880.0,129.0,322.0,126.0,1.23
-2025-12-23T12:16:27.889360,992c8e4a-4288-4dd0-87cf-b60de1b92c17,1,0.7088514566421509,-122.23,37.88,41.0,880.0,129.0,322.0,126.0,1.23
+![alt text](image-1.png)
 
 # 4. DRIFT MONITORING
 python3 monitoring/drift_checker.py
@@ -73,7 +68,10 @@ DRIFT:         {'longitude': 'DRIFT', 'latitude': 'OK', ...}
 
 ENDPOINTS WORKING
 ================
+
 GET    http://localhost:8000/          # Status
+
 POST   http://localhost:8000/predict   # Classify house
+
 GET    http://localhost:8000/health    # Health check
 
