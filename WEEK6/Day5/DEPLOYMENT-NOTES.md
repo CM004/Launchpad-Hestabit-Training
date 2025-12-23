@@ -3,12 +3,13 @@ DAY 5 - HOUSE PRICE CLASSIFIER DEPLOYMENT
 =========================================
 
 Day5
-====
-- API: Running & Predicting
-- Logs: prediction_logs.csv (created)
-- Drift: Monitoring working (DRIFT detected)
-- Docker: Built & Ready
-- Model: Loaded successfully
+----
+
+1. API: Running & Predicting
+2. Logs: prediction_logs.csv (created)
+3. Drift: Monitoring working (DRIFT detected)
+4. Docker: Built & Ready
+5. Model: Loaded successfully
 
 CURRENT STRUCTURE (Day5/)
 ========================
