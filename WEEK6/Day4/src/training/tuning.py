@@ -18,8 +18,8 @@ N_SPLITS = 5
 N_TRIALS = 50
 
 DATA_DIR = "src/data/processed"
-TUNING_DIR = "tuning"
-MODEL_DIR = "models"
+TUNING_DIR = "src/tuning"
+MODEL_DIR = "src/models"
 
 os.makedirs(TUNING_DIR, exist_ok=True)
 os.makedirs(MODEL_DIR, exist_ok=True)

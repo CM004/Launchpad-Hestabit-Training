@@ -9,10 +9,9 @@ from ..utils.logger import setup_logger
 
 logger = setup_logger()
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-MODEL_PATH = os.path.join(BASE_DIR, "src", "models", "tuned_xgboost.pkl")
-DATA_DIR = os.path.join(BASE_DIR, "src", "data", "processed")
-OUTPUT_DIR = os.path.join(BASE_DIR, "src", "evaluation")
+MODEL_PATH = "src/models/tuned_xgboost.pkl"
+DATA_DIR = "src/data/processed"
+OUTPUT_DIR = "src/evaluation"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -80,5 +79,5 @@ print("\nSHAP plots saved:")
 print("- shap_summary.png")
 print("- feature_importance.png") 
 print("- top_features.csv")
-print("Day 4 SHAP analysis ✅ COMPLETE")
+print("Day 4 SHAP analysis COMPLETE")
 logger.info("Day 4 SHAP analysis complete")
