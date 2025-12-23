@@ -10,7 +10,7 @@ import os
 
 app = FastAPI(title="House Price Classifier", version="1.0")
 
-MODEL_PATH = "models/best_model.pkl"
+MODEL_PATH = "/home/chandramohan/Desktop/Week1/WEEK6/Day5/src/models/best_model.pkl"
 FEATURES_PATH = "src/features/feature_list.json"
 LOG_PATH = "prediction_logs.csv"
 
