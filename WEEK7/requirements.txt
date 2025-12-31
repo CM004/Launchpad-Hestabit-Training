@@ -1,0 +1,16 @@
+langchain
+langchain-core
+langchain-community
+pypdf
+python-docx
+docx2txt
+pymupdf
+sentence-transformers
+faiss-cpu
+langchain-groq
+langchain-text-splitters
+google-genai
+pandas
+numpy
+dotenv
+pathlib

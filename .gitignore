@@ -6,7 +6,7 @@ logs/
 
 
 
-
+.env
 .env.*
 
 WEEK4/.env.dev
