@@ -61,7 +61,7 @@ python src/retriever/query_engine.py
 - LLM: Goggle Gemini flash (latest) for response generation
 
 ## Data Flow
-Raw Docs → Loader → Cleaned JSON → Chunker → Chunks JSON → Embedder → Embeddings → FAISS Index → User Query → Retriever → Context → LLM → Response
+Raw Docs → Loader → Cleaned JSON → Chunker → Chunks JSON → MiniLM-L6-v2 (tokenization) → Contrastive Learning Encoder → Mean Pooling Embedder → Dense Vector Embeddings → FAISS Index stored → User Query → MiniLM-L6-v2 (embedding) → FAISS (similarity search) → Top-k chunks retrieved → Prompt assembly → Gemini LLM → Final Answer
 
 ## Configuration
 - Chunk Size: 800 characters
@@ -69,3 +69,7 @@ Raw Docs → Loader → Cleaned JSON → Chunker → Chunks JSON → Embedder �
 - Top-K Retrieval: 3-5 chunks
 - Embedding Model: all-MiniLM-L6-v2
 - Vector DB: FAISS with L2 distance
+
+
+## Screenshot
+![alt text](<Screenshot from 2026-01-02 12-49-20.png>)
