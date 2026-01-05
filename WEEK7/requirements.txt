@@ -14,3 +14,5 @@ pandas
 numpy
 dotenv
 pathlib
+langchain_huggingface
+rank-bm25
