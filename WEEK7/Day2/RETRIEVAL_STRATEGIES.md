@@ -5,19 +5,22 @@
 - Goal: get more relevant chunks, cut down hallucinations, and always know exactly which file and chunk each answer came from.
 
 ## Project Structure (Day 2)  
-- `src/retriever/hybrid_retriever.py`  
-  - Hybrid search using BM25 + FAISS + RRF.  
-- `src/retriever/reranker.py`  
-  - Cross-encoder based reranking of retrieved chunks.  
-- `src/pipelines/context_builder.py`  
+- src/retriever/hybrid_retriever.py 
+  - Hybrid search using BM25 + FAISS + RRF. 
+
+- src/retriever/reranker.py 
+  - Cross-encoder based reranking of retrieved chunks.
+
+- src/pipelines/context_builder.py
   - Orchestrates retrieval + reranking and builds the final context + sources list.  
 
 Day 1 (loader, chunker, embedder, indexing, query_engine) stays the same and still powers the basic FAISS-only query flow.
 
-## Hybrid Retrieval (BM25 + FAISS + RRF)  
-**File:** `src/retriever/hybrid_retriever.py`  
+## Hybrid Retrieval (BM25 + FAISS + RRF) 
 
-- Reads chunks from `src/data/chunks/chunks.json` (`text`, `source`, `chunk_id`).  
+File: src/retriever/hybrid_retriever.py
+
+- Reads chunks from src/data/chunks/chunks.json (text, source, chunk_id).  
 - Builds two retrievers on the same data:  
   - BM25 retriever for keyword / exact string match (IDs, names, URLs, etc.).  
   - FAISS retriever using `all-MiniLM-L6-v2` embeddings for semantic search.  
@@ -31,7 +34,8 @@ Day 1 (loader, chunker, embedder, indexing, query_engine) stays the same and sti
   - `retrieve(query, k)` finally returns the top `k` documents after this fused scoring (for Day 2, upstream asks for 50).
 
 ## Cross-Encoder Reranking  
-**File:** `src/retriever/reranker.py`  
+
+File: src/retriever/reranker.py 
 
 - Uses `cross-encoder/ms-marco-MiniLM-L-6-v2`.  
 - Takes the candidate docs from `retrieve(query, k=50)`.  
@@ -40,7 +44,8 @@ Day 1 (loader, chunker, embedder, indexing, query_engine) stays the same and sti
 - Idea: BM25 + FAISS + RRF gives a good candidate pool (high recall), and the cross-encoder cleans it up and keeps only the best few (high precision).
 
 ## Context Builder  
-**File:** `src/pipelines/context_builder.py`  
+
+File: src/pipelines/context_builder.py 
 
 - Calls `retrieve(query, k=50)` to get a wide set of candidates.  
 - Calls `rerank(query, docs, top_k=5)` to pick the 5 most relevant chunks.  
@@ -53,8 +58,9 @@ Day 1 (loader, chunker, embedder, indexing, query_engine) stays the same and sti
   - `sources`: a list of `{"source": <filename>, "chunk_id": <chunk_id>}` so each chunk can be traced back to the original Day 1 `chunks.json` entry. 
 
 ## Integration with Query Engine
-**File:** `src/retriever/query_engine.py`
 
+File: src/retriever/query_engine.py
+- run with `python src/retriever/query_engine.py`
 - Uses build_context(query, k=5) instead of Day 1's simple FAISS-only retrieval.
 - Sends formatted context + query to LLM.
 - Returns answer + traceable sources.
@@ -62,7 +68,9 @@ Day 1 (loader, chunker, embedder, indexing, query_engine) stays the same and sti
 
 ![alt text](<Screenshot from 2026-01-05 18-47-55.png>)
 
-## To see raw context without LLM 
+## To see raw context witout LLM
+
+File: src/pipelines/context_builder.py
 - run with `python src/pipelines/context_builder.py`:  
   - Asks only for the query (k is fixed to 5 inside the script).  
   - Prints the `CONTEXT` section (5 numbered chunks).  
