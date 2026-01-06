@@ -16,3 +16,8 @@ dotenv
 pathlib
 langchain_huggingface
 rank-bm25
+torch 
+pillow 
+pytesseract 
+faiss-cpu
+transformers
