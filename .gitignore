@@ -1,14 +1,8 @@
 node_modules/
-
 logs/
-
 *.log
-
-
-
 .env
 .env.*
-
 WEEK4/.env.dev
 WEEK4/.env.local
 WEEK4/.env.prod
@@ -16,3 +10,4 @@ certs
 !.env.example
 venv
 __pycache__
+!WEEK7/Day5/src/logs
