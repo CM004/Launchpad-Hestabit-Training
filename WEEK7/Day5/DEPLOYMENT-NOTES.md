@@ -6,29 +6,27 @@ FastAPI → FAISS/SQL/Image rag pipeline → Evaluator → Memory (CHAT-LOGS.jso
 ```
 
 ## **Endpoints**
-```bash
-/ask        # Text RAG (FAISS)
-curl -X POST http://localhost:8000/ask -d '{"question": "who is the ceo of ACRES"}'
+
+# /ask        # Text RAG (FAISS)
+ - curl -X POST http://localhost:8000/ask -d '{"question": "who is the ceo of ACRES"}'
 
 ![alt text](<Screenshot from 2026-01-08 17-26-26.png>)
 
 ![alt text](<Screenshot from 2026-01-08 17-26-32.png>)
 
-/ask/sql    # Chinook SQL  
-curl -X POST http://localhost:8000/ask/sql -d '{"question": "highest sales of each genre"}'
+# /ask/sql    # Chinook SQL  
+- curl -X POST http://localhost:8000/ask/sql -d '{"question": "highest sales of each genre"}'
 
 ![alt text](<Screenshot from 2026-01-08 15-53-11.png>)
 
-/ask/image  # Image RAG (CLIP-BLIP)
-curl -X POST "http://localhost:8000/ask/image" -F "question=construction"
+# /ask/image  # Image RAG (CLIP-BLIP)
+- curl -X POST "http://localhost:8000/ask/image" -F "question=construction"
 
 ![alt text](<Screenshot from 2026-01-08 17-41-00.png>)
 
 ![alt text](<Screenshot from 2026-01-08 17-36-43.png>)
 
 ![alt text](<Screenshot from 2026-01-08 17-36-50.png>) 
-
-```
 
 ## **Response:**
 ```json
