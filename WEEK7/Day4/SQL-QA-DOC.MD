@@ -10,21 +10,21 @@ the Chinook database, blocks dangerous SQL, and returns short, human-friendly su
 ## Architecture
 ----------------
 
-User Question
+User Question - plain text
         ↓
 Schema Loader
         ↓
-Prompt Construction
+Prompt Construction - generate_sql(question, schema)
         ↓
 LLM (Gemini)
         ↓
-SQL Generation
+SQL Generation (Sql response)
         ↓
 SQL Validation
         ↓
-SQLite Execution
+SQLite Execution - execute_sql(sql, db_path)
         ↓
-Result Summarization
+Result Summarization - summarize_result(question, result(rows, columns)
         ↓
 Final Answer
 
@@ -38,9 +38,9 @@ Final Answer
 
 2. Prompt construction (sql_generator.py)
    - Builds a prompt with:
-       - Allowed tables and columns only
+       - Allowed tables and columns (schema) only
        - SQLite syntax rules
-       - Hard rule: only SELECT queries, no comments or explanations
+       - Hard rule: only SELECT queries, no comments or explanations, end with semicolon
 
 3. SQL generation (LLM)
    - The LLM returns a SELECT ... query string for the user question
@@ -54,10 +54,9 @@ Final Answer
 
 5. Safe execution (sql_pipeline.py)
    - Connects to SQLite using DB_PATH = "src/data/db/chinook.db"
-   - Executes the validated SELECT and fetches columns and rows
+   - Executes the validated SELECT query on db and fetches columns and rows
 
 6. Result summarization (llm_client.py)
-   - Builds a small text table from the top rows
    - Asks the LLM for a short plain-English summary of the result
    - Used as the final user-facing answer
 
