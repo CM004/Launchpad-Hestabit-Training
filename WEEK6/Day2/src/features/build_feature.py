@@ -1,4 +1,7 @@
-from ..utils import logger as log_module
+import sys
+sys.path.append('src')
+
+from utils import logger as log_module
 import pandas as pd
 import numpy as np
 from pathlib import Path

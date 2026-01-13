@@ -5,8 +5,10 @@ import numpy as np
 import pandas as pd
 import joblib
 from pathlib import Path
+import sys
+sys.path.append('src')
 
-from ..utils.logger import setup_logger
+from utils.logger import setup_logger
 from xgboost import XGBClassifier
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold

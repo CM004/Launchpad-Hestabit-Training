@@ -1,4 +1,7 @@
-from ..utils.logger import setup_logger
+import sys
+sys.path.append('src')
+
+from utils.logger import setup_logger
 logger = setup_logger()
 import pandas as pd
 import numpy as np

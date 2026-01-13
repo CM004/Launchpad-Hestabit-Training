@@ -7,7 +7,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
-from ..utils.logger import setup_logger
+import sys
+sys.path.append('src')
+
+from utils.logger import setup_logger
 
 logger = setup_logger()
 

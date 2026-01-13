@@ -1,5 +1,8 @@
-from ..utils import logger as log_module
-from ..features.build_feature import generate_features
+import sys
+sys.path.append('src')
+
+from utils import logger as log_module
+from features.build_feature import generate_features
 import pandas as pd
 import numpy as np
 import json

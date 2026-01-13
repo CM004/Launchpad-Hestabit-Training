@@ -5,7 +5,10 @@ import joblib
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-from ..utils.logger import setup_logger
+import sys
+sys.path.append('src')
+
+from utils.logger import setup_logger
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,

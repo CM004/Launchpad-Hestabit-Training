@@ -17,7 +17,7 @@ export default function Home() {
             <li>2. <a href="/api" className="text-blue-600 hover:underline">NGINX reverse proxy</a></li>
             <li>3. <a href="/api" className="text-blue-600 hover:underline">MongoDB database</a></li>
             <li>4. <a href="/health" className="text-blue-600 hover:underline">Production ready backend</a></li>
-            <li>5. Next.js frontend ✅</li>
+            <li>5. Next.js frontend </li>
           </ul>
         </div>
       </div>
