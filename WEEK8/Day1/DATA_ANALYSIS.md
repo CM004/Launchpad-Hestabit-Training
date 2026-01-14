@@ -10,7 +10,7 @@ Dataset processing pipeline for a 2,000-sample instruction-tuning dataset in the
 ### 1. `coding_raw_2000.jsonl` – Raw Dataset
 Purpose: Base instruction-tuning dataset for TinyLlama fine-tuning.
 
-- Total samples: 2,000[1]
+- Total samples: 2,000
 - Format: JSONL, one JSON object per line with fields: `instruction`, `input`, `output`
 
 Task types included:
@@ -30,9 +30,9 @@ Configuration:
 - Input: `data/raw/coding_raw_2000.jsonl`  
 - Output train file: `data/train.jsonl`  
 - Output val file: `data/val.jsonl`  
-- Train/Val ratio: 80/20 split (1,600 train / 400 val)[1]
-- Tokenizer for analysis: `tiktoken` with `cl100k_base` encoding[1]
-- Max tokens per sample: 2,000 (filter upper outliers)[1]
+- Train/Val ratio: 80/20 split (1,600 train / 400 val)
+- Tokenizer for analysis: `tiktoken` with `cl100k_base` encoding
+- Max tokens per sample: 2,000 (filter upper outliers)
 
 Cleaning and filtering criteria:
 1. Valid JSON line (invalid JSON lines are skipped).  
