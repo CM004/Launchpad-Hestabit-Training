@@ -3,6 +3,7 @@ logs/
 *.log
 .env
 .env.*
+.venv
 WEEK4/.env.dev
 WEEK4/.env.local
 WEEK4/.env.prod
@@ -11,3 +12,4 @@ certs
 venv
 __pycache__
 !WEEK7/Day5/src/logs
+WEEK8/Day3/quantized
