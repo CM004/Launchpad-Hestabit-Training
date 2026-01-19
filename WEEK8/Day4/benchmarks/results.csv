@@ -1,0 +1,43 @@
+merged-fp16,2,### Instruction:Explain binary search algorithm### Input:How does binary search ...,75,8.645,2.299,8.68,0.7092
+merged-fp16,1,### Instruction:What is a stack data structure?### Input:Define stack and its ba...,94,11.216,1.242,8.38,0.8394
+merged-fp16,2,### Instruction:Determine space complexity### Input:Recursive function that call...,36,8.771,3.593,4.1,0.7555
+merged-fp16,1,### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - out...,62,12.293,1.611,5.04,0.8605
+merged-fp16,2,### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time ...,63,12.023,3.801,5.24,0.7354
+merged-fp16,1,### Instruction:Extract key differences between array and linked list### Input:C...,90,15.046,2.0,5.98,0.7885
+
+/model-int8,1,### Instruction:What is a stack data structure?### Input:Define stack and its ba...,43,25.668,5.922,1.68,0.8399
+/model-int8,2,### Instruction:Explain binary search algorithm### Input:How does binary search ...,119,42.817,9.915,2.78,0.9275
+/model-int8,2,### Instruction:Determine space complexity### Input:Recursive function that call...,52,35.439,13.1,1.47,0.7228
+/model-int8,1,### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - out...,76,41.15,6.727,1.85,0.8338
+/model-int8,2,### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time ...,57,33.885,12.664,1.68,0.7529
+/model-int8,1,### Instruction:Extract key differences between array and linked list### Input:C...,97,44.309,6.638,2.19,0.8396
+
+/model-int4,1,1,### Instruction:What is a stack data structure?### Input:Define stack and its ba...,36,91.299,4.699,0.39,0.765
+/model-int4,1,2,### Instruction:Explain binary search algorithm### Input:How does binary search ...,72,195.437,7.552,0.37,0.8177
+/model-int4,2,1,### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - out...,66,166.235,4.174,0.4,0.7913
+/model-int4,2,2,### Instruction:Determine space complexity### Input:Recursive function that call...,97,286.336,7.975,0.34,0.7408
+/model-int4,3,1,### Instruction:Extract key differences between array and linked list### Input:C...,72,191.088,4.268,0.38,0.7921
+/model-int4,3,2,### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time ...,95,253.273,8.088,0.38,0.6909
+
+el-f16.gguf,1,1,### Instruction:What is a stack data structure?### Input:Define stack and its ba...,84,6.236,1.113,13.47,0.6053
+el-f16.gguf,1,2,### Instruction:Explain binary search algorithm### Input:How does binary search ...,131,9.289,1.019,14.1,0.9015
+el-f16.gguf,2,1,### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - out...,37,3.201,0.928,11.56,0.8624
+el-f16.gguf,2,2,### Instruction:Determine space complexity### Input:Recursive function that call...,48,4.156,0.925,11.55,0.7282
+el-f16.gguf,3,2,### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time ...,104,8.194,0.849,12.69,0.7726
+el-f16.gguf,3,1,### Instruction:Extract key differences between array and linked list### Input:C...,104,8.543,0.851,12.17,0.8216
+
+l-q8_0.gguf,1,1,### Instruction:What is a stack data structure?### Input:Define stack and its ba...,55,3.55,0.633,15.49,0.804
+l-q8_0.gguf,1,2,### Instruction:Explain binary search algorithm### Input:How does binary search ...,116,6.554,1.075,17.7,0.8654
+l-q8_0.gguf,2,1,### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - out...,33,2.556,0.928,12.91,0.8261
+l-q8_0.gguf,2,2,### Instruction:Determine space complexity### Input:Recursive function that call...,40,2.917,0.927,13.71,0.7047
+l-q8_0.gguf,3,2,### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time ...,50,3.28,0.917,15.25,0.7237
+l-q8_0.gguf,3,1,### Instruction:Extract key differences between array and linked list### Input:C...,131,6.811,0.917,19.23,0.8222
+
+l-q4_0.gguf,1,1,### Instruction:What is a stack data structure?### Input:Define stack and its ba...,62,3.213,0.766,19.3,0.6857
+l-q4_0.gguf,1,2,### Instruction:Explain binary search algorithm### Input:How does binary search ...,71,3.4,0.675,20.88,0.7822
+l-q4_0.gguf,2,2,### Instruction:Determine space complexity### Input:Recursive function that call...,8,0.876,0.581,9.14,0.6121
+l-q4_0.gguf,2,1,### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - out...,44,1.83,0.582,24.04,0.853
+l-q4_0.gguf,3,2,### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time ...,51,2.657,0.591,19.19,0.6855
+l-q4_0.gguf,3,1,### Instruction:Extract key differences between array and linked list### Input:C...,79,3.484,0.593,22.68,0.7935
+
+

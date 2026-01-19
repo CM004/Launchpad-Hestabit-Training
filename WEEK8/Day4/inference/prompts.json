@@ -1,0 +1,32 @@
+[
+  {
+    "id": "qa_1",
+    "prompt": "### Instruction:What is a stack data structure?### Input:Define stack and its basic operations",
+    "output": "A stack is a linear data structure that follows the Last In First Out (LIFO) principle. The basic operations are push (add element to top), pop (remove element from top), peek (view top element without removing), and isEmpty (check if stack is empty). Common applications include function call management, expression evaluation, and undo mechanisms."
+  },
+  {
+    "id": "qa_2",
+    "prompt": "### Instruction:Explain binary search algorithm### Input:How does binary search work on a sorted array?",
+    "output": "Binary search is a divide-and-conquer algorithm that finds a target value in a sorted array. It compares the target with the middle element. If equal, it returns the index. If target is smaller, it searches the left half; if larger, it searches the right half. This process repeats, halving the search space each time. Time complexity is O(log n) because it eliminates half the elements in each step."
+  },
+  {
+    "id": "reasoning_1",
+    "prompt": "### Instruction:Calculate time complexity### Input:Algorithm: Nested loops - outer loop runs n times, inner loop runs n times",
+    "output": "For nested loops where both run n times, the outer loop executes n iterations. For each outer iteration, the inner loop also executes n iterations. Total operations = n × n = n². Constant factors are dropped in Big-O notation. Therefore, the time complexity is O(n²). This is called quadratic time complexity and is common in algorithms like bubble sort and selection sort."
+  },
+  {
+    "id": "reasoning_2",
+    "prompt": "### Instruction:Determine space complexity### Input:Recursive function that calls itself n times, each call uses constant space",
+    "output": "In a recursive function with n calls, each call is pushed onto the call stack. If each call uses O(1) constant space for variables, and there are n recursive calls before reaching the base case, the call stack grows to depth n. The total space used by the call stack is proportional to n. Therefore, the space complexity is O(n). This is typical for linear recursion like factorial or Fibonacci without memoization."
+  },
+  {
+    "id": "extraction_1",
+    "prompt": "### Instruction:Extract key differences between array and linked list### Input:Compare: memory layout, access time, insertion cost",
+    "output": "Memory Layout: Arrays use contiguous memory; linked lists use scattered nodes with pointers. Access Time: Arrays have O(1) random access by index; linked lists have O(n) access requiring traversal. Insertion Cost: Arrays require O(n) time for middle insertion due to shifting; linked lists allow O(1) insertion with node pointer. Arrays are better for random access; linked lists excel at frequent insertions/deletions."
+  },
+  {
+    "id": "extraction_2",
+    "prompt": "### Instruction:Identify sorting algorithm properties### Input:Merge Sort: time complexity, space complexity, stability",
+    "output": "Time Complexity: O(n log n) in all cases (best, average, worst) due to consistent divide-and-conquer approach. Space Complexity: O(n) auxiliary space needed for temporary arrays during merging. Stability: Stable - preserves relative order of equal elements. Additional Properties: Not in-place (requires extra memory), predictable performance, good for large datasets, uses divide-and-conquer paradigm."
+  }
+]
