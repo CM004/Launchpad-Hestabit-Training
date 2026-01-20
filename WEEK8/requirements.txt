@@ -6,3 +6,5 @@ pydantic
 openai
 streamlit
 requests
+faiss-cpu
+sentence-transformers
