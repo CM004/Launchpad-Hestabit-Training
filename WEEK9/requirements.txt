@@ -1,0 +1,7 @@
+autogen-agentchat
+autogen-core
+autogen-ext
+asyncio
+autogen-ext[llama-cpp]
+autogen-ext[ollama]
+pandas

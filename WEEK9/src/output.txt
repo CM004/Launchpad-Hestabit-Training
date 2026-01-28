@@ -1,0 +1,4 @@
+Sales insights:
+- Total products sold: 1050
+- Top selling product: Phone with 300 units
+- Average price of products sold: $29,684.21
