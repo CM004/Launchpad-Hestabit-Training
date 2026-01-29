@@ -1,12 +1,12 @@
 from autogen_agentchat.agents import AssistantAgent
-from autogen_ext.models.llama_cpp import LlamaCppChatCompletionClient
+from autogen_ext.models.ollama import OllamaChatCompletionClient
 from autogen_core.model_context import BufferedChatCompletionContext
 
-model_client = LlamaCppChatCompletionClient(
-    model_path="/home/chandramohan/Desktop/Week1/WEEK9/src/models/qwen2.5-7b-instruct-q4_0.gguf",
-    n_ctx=2048
-    )
-
+# model_client = LlamaCppChatCompletionClient(
+#     model_path="/home/chandramohan/Desktop/Week1/WEEK9/src/models/qwen2.5-7b-instruct-q4_0.gguf",
+#     n_ctx=2048
+#     )
+model_client = OllamaChatCompletionClient(model="qwen2.5:7b-instruct-q4_0")
 research_agent = AssistantAgent(
     name="ResearchAgent",
     model_client=model_client,

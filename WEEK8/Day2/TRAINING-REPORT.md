@@ -8,8 +8,8 @@ Parameter-efficient fine-tuning of a 1.1B parameter language model using **LoRA 
 ## Dataset Configuration
 
 ### Data Sources
-- **Training Data**: `/kaggle/input/instruct-dataset/train.jsonl`
-- **Validation Data**: `/kaggle/input/instruct-dataset/val.jsonl`
+- **Training Data**: `input/instruct-dataset/train.jsonl`
+- **Validation Data**: `input/instruct-dataset/val.jsonl`
 
 ### Data Format
 The dataset follows an instruction-tuning format with three components:
