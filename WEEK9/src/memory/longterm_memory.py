@@ -16,7 +16,8 @@ class LongTermMemory(Memory):
                 content TEXT NOT NULL,
                 memory_type TEXT NOT NULL,
                 importance INTEGER DEFAULT 5,
-                timestamp TEXT NOT NULL
+                timestamp TEXT NOT NULL,
+                UNIQUE(content, memory_type)
             )""")
         conn.commit()
         conn.close()
@@ -24,7 +25,7 @@ class LongTermMemory(Memory):
     async def add(self, content: MemoryContent, memory_type: str = "episodic", importance: int = 5):
         conn = sqlite3.connect(self.db_path)
         conn.execute(
-            "INSERT INTO memories (content, memory_type, importance, timestamp) VALUES (?, ?, ?, ?)",
+            "INSERT OR IGNORE INTO memories (content, memory_type, importance, timestamp) VALUES (?, ?, ?, ?)",
             (content.content, memory_type, importance, datetime.now().isoformat())
         )
         conn.commit()

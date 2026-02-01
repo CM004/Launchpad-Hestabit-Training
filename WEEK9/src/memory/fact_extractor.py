@@ -53,7 +53,6 @@ Assistant: "Your name is Ayush"
 Output:
 - No new facts"""
 
-
 fact_extractor = AssistantAgent(
         name="FactExtractor",
         model_client=OllamaChatCompletionClient(model="qwen2.5:7b-instruct-q4_0"),

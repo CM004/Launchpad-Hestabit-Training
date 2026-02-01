@@ -1,7 +1,7 @@
 from autogen_core.memory import Memory, MemoryContent, MemoryMimeType, MemoryQueryResult, UpdateContextResult
 # import asyncio
-from autogen_agentchat.agents import AssistantAgent
-from autogen_ext.models.ollama import OllamaChatCompletionClient
+#from autogen_agentchat.agents import AssistantAgent
+#from autogen_ext.models.ollama import OllamaChatCompletionClient
 
 class SessionMemory(Memory):
     def __init__(self, max_turns: int = 10):
@@ -22,7 +22,6 @@ class SessionMemory(Memory):
         ]
         # Wrap in MemoryQueryResult (required by AutoGen)
         return MemoryQueryResult(results=memory_contents)
-    
     
     async def update_context(self, model_context) -> UpdateContextResult:
         """Inject memories into agent context"""

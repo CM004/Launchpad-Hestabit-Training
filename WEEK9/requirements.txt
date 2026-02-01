@@ -4,4 +4,8 @@ autogen-ext
 asyncio
 autogen-ext[llama-cpp]
 autogen-ext[ollama]
+autogen-ext[openai]
+python-dotenv
 pandas
+faiss-cpu
+sentence-transformers
